@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="nombre"/>
+    <field name="nombre"/>
+    <label name="apellido"/>
+    <field name="apellido"/>
+    <label name="correo"/>
+    <field name="correo"/>
+    <label name="redes_sociales"/>
+    <field name="redes_sociales" widget="selection" editable="1">
+        <selection>
+            <selection name="linkedin">LinkedIn</selection>
+            <selection name="twitter">Twitter</selection>
+            <selection name="facebook">Facebook</selection>
+        </selection>
+    </field>
+    <label name="enlace_perfil"/>
+    <field name="enlace_perfil"/>
+    <group col="20" colspan="2">
+        <label name="active"/>
+        <field name="active" xexpand="0" width="25"/>
+    </group>
+</form>
