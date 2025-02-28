@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- icono -->
+        <record model="ir.ui.icon" id="persona_icono">
+            <field name="name">persona-icono</field>
+            <field name="path">icons/persona-icono.svg</field>
+        </record>
+
+        <!-- vista -->
+        <record model="ir.ui.view" id="persona_view_tree">
+            <field name="model">personas.persona</field>
+            <field name="type">tree</field>
+            <field name="name">personas_tree</field>
+        </record>
+
+        <!-- formulario -->
+        <record model="ir.ui.view" id="persona_view_form">
+            <field name="model">personas.persona</field>
+            <field name="type">form</field>
+            <field name="name">personas_form</field>
+        </record>
+
+        <!-- acción que se ejecutará desde la opción del menú  -->
+        <record model="ir.action.act_window" id="act_persona_form">
+            <field name="name">Personas</field>
+            <field name="res_model">personas.persona</field>
+        </record>
+
+        <!-- acción que conecta la vista -->
+        <record model="ir.action.act_window.view" id="act_persona_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="persona_view_tree"/>
+            <field name="act_window" ref="act_persona_form"/>
+        </record>
+
+        <!-- acción que conecta el formulario -->
+        <record model="ir.action.act_window.view" id="act_persona_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="persona_view_form"/>
+            <field name="act_window" ref="act_persona_form"/>
+        </record>
+
+        <!-- menú principal del módulo -->
+        <menuitem name="Personas" id="menu_per" sequence="1" icon="tryton-open"/>
+        <!-- conectamos el item de menu al menu principal -->
+        <menuitem name="Personas" parent="menu_per" id="menu_per2" sequence="1" icon="persona-icono" action="act_persona_form"/>
+    </data>
+</tryton>
