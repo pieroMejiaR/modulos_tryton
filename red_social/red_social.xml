@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- icono -->
+        <record model="ir.ui.icon" id="red_social_icono">
+            <field name="name">red_social_icono</field>
+            <field name="path">icons/red-social-icono.svg</field>
+        </record>
+
+        <!-- vista -->
+        <record model="ir.ui.view" id="red_social_view_tree">
+            <field name="model">redes_sociales.channel</field>
+            <field name="type">tree</field>
+            <field name="name">red_social_tree</field>
+        </record>
+
+        <!-- formulario -->
+        <record model="ir.ui.view" id="red_social_view_form">
+            <field name="model">redes_sociales.channel</field>
+            <field name="type">form</field>
+            <field name="name">red_social_form</field>
+        </record>
+
+        <!-- acción que se ejecutará desde la opción del menú  -->
+        <record model="ir.action.act_window" id="act_red_social_form">
+            <field name="name">Redes Sociales</field>
+            <field name="res_model">redes_sociales.channel</field>
+        </record>
+
+        <!-- acción que conecta la vista -->
+        <record model="ir.action.act_window.view" id="act_red_social_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="red_social_view_tree"/>
+            <field name="act_window" ref="act_red_social_form"/>
+        </record>
+
+        <!-- acción que conecta el formulario -->
+        <record model="ir.action.act_window.view" id="act_red_social_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="red_social_view_form"/>
+            <field name="act_window" ref="act_red_social_form"/>
+        </record>
+
+        <!-- menú principal del módulo -->
+        <menuitem name="Redes sociales" id="menu_social" sequence="1" icon="tryton-open"/>
+
+        <!-- conectamos el item de menu al menu principal -->
+        <menuitem name="Red social" parent="menu_social" id="menu_red" sequence="1" icon="red_social_icono" action="act_red_social_form"/>
+    </data>
+</tryton>
