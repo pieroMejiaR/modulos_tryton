@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="empresa"/>
+    <field name="empresa"/>
+    <label name="username"/>
+    <field name="username"/>
+    <label name="channel_id"/>
+    <field name="channel_id" readonly="1"/>
+    <label name="subscribers"/>
+    <field name="subscribers" readonly="1"/>
+    <label name="videos"/>
+    <field name="videos" readonly="1"/>
+    <label name="latest_video"/>
+    <field name="latest_video" readonly="1"/>
+    <label name="video_url"/>
+    <field name="video_url" readonly="1"/>
+    <button name="obtener_datos" string="Obtener Datos" type="object" icon="tryton-refresh"/>
+</form>

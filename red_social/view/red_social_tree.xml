@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="empresa"/>
+    <field name="username"/>
+    <field name="channel_id"/>
+    <field name="subscribers"/>
+    <field name="videos"/>
+    <field name="latest_video"/>
+    <field name="video_url"/>
+</tree>
